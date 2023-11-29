@@ -23,28 +23,28 @@ public class Quiz2colegiado {
         // Solicitar al usuario que ingrese los datos de 10 canciones
             for (int i = 0; i < 10; i++) {
             // Mostrar cuadros de diálogo para obtener los datos de la canción
-             Cancion nuevaCancion = new Cancion(0, "", "", 0, 0);
+             Cancion cancionNueva = new Cancion(0, "", "", 0, 0);
 
             // Utilizar JOptionPane para obtener los datos de la canción
-            nuevaCancion.setId(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID de la canción #" + (i + 1))));
-            nuevaCancion.setTitulo(JOptionPane.showInputDialog("Ingrese el título de la canción #" + (i + 1)));
-            nuevaCancion.setAutor(JOptionPane.showInputDialog("Ingrese el autor de la canción #" + (i + 1)));
-            nuevaCancion.setDuracion(Double.parseDouble(JOptionPane.showInputDialog("Ingrese la duración de la canción #" + (i + 1))));
-            nuevaCancion.setAnioCreacion(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el año de creación de la canción #" + (i + 1))));
+            cancionNueva.setId(Integer.parseInt(JOptionPane.showInputDialog("Digite el ID de la canción #" + (i + 1))));
+            cancionNueva.setTitulo(JOptionPane.showInputDialog("Digite el título de la canción #" + (i + 1)));
+            cancionNueva.setAutor(JOptionPane.showInputDialog("Digite el autor de la canción #" + (i + 1)));
+            cancionNueva.setDuracion(Double.parseDouble(JOptionPane.showInputDialog("Digite la duración de la canción #" + (i + 1))));
+            cancionNueva.setAnioCreacion(Integer.parseInt(JOptionPane.showInputDialog("Digite el año de creación de la canción #" + (i + 1))));
 
             // Almacenar la nueva canción en el arreglo
-            top10[i] = nuevaCancion;
+            top10[i] = cancionNueva;
             //JOptionPane.showMessageDialog(nuevaCacion);
         }
             
         
-        // Imprimir la información de todas las canciones ingresadas
-        System.out.println("Información de todas las canciones:");
+        // Imprime la información de las canciones 
+        System.out.println("Información de las canciones:");
         for (Cancion cancion : top10) {
             System.out.println(cancion);
         }
 
-        // Imprimir canciones anteriores al año actual
+        // Imprime canciones anteriores al año actual
         System.out.println("\nCanciones anteriores al año actual:");
         for (Cancion cancion : top10) {
             if (cancion.AnteriorAlAnioActual()) {
@@ -52,7 +52,7 @@ public class Quiz2colegiado {
             }
         }
 
-        // Imprimir canciones del año actual
+        // Imprime canciones del año actual
         System.out.println("\nCanciones del año actual:");
         for (Cancion cancion : top10) {
             if (cancion.DelAnioActual()) {
@@ -60,7 +60,7 @@ public class Quiz2colegiado {
             }
         }
 
-        // Imprimir canciones posteriores al año actual
+        // Imprime canciones posteriores al año actual
         System.out.println("\nCanciones posteriores al año actual:");
         for (Cancion cancion : top10) {
             if (cancion.PosteriorAlAinoActual()) {
@@ -68,7 +68,7 @@ public class Quiz2colegiado {
             }
         }
 
-        // Encontrar y imprimir la canción de mayor duración
+        // Encuentra e imprime la canción de mayor duración
         Cancion cancionMasLarga = top10[0];
         for (Cancion cancion : top10) {
             if (cancion.getDuracion() > cancionMasLarga.getDuracion()) {
@@ -78,7 +78,7 @@ public class Quiz2colegiado {
         System.out.println("\nCanción de mayor duración:");
         System.out.println(cancionMasLarga);
 
-        // Imprimir el autor de la canción en la primera posición
+        // Imprime el autor de la canción en la primera posición
         System.out.println("\nAutor de la canción en la primera posición:");
         System.out.println(top10[0].getAutor());
     }
