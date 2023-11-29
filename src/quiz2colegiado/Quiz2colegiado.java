@@ -34,7 +34,7 @@ public class Quiz2colegiado {
 
             // Almacenar la nueva canción en el arreglo
             top10[i] = cancionNueva;
-            //JOptionPane.showMessageDialog(nuevaCacion);
+            
         }
             
         
